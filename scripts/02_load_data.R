@@ -110,4 +110,19 @@ ggsave(
   height = 6,
   dpi = 300
 )
+system("git --version")
+
+system('git config --global user.name "Mariah Tsui"')
+system('git config --global user.email "mariah.tsui@gmail.com"')
+Sys.getenv("USERPROFILE")
+system('git -C "C:/Users/maria/OneDrive/Documents/projects/bay-area-rent-wage" init')
+
+writeLines(c(
+  ".Rhistory",
+  ".RData",
+  ".Rproj.user"
+), "C:/Users/maria/OneDrive/Documents/projects/bay-area-rent-wage/.gitignore")
+
+system('git -C "C:/Users/maria/OneDrive/Documents/projects/bay-area-rent-wage" add .')
+system('git -C "C:/Users/maria/OneDrive/Documents/projects/bay-area-rent-wage" commit -m "Initial commit: Bay Area rent vs wage analysis"')
 
