@@ -1,0 +1,27 @@
+library(tidyverse)
+library(scales)
+library(janitor)
+library(readxl)
+library(ggplot2)
+
+# Practice data
+years <- 2015:2024
+rent <- c(2200, 2400, 2600, 2750, 2900, 2800, 2950, 3100, 3300, 3500)
+wage <- c(3500, 3600, 3700, 3800, 3850, 3900, 3950, 4000, 4050, 4100)
+
+df <- data.frame(years, rent, wage)
+
+# Your first chart
+ggplot(df, aes(x = years)) +
+  geom_line(aes(y = rent, color = "Median Rent")) +
+  geom_line(aes(y = wage, color = "Median Wage")) +
+  scale_y_continuous(labels = scales::dollar) +
+  labs(
+    title = "Bay Area Rent vs. Wage (Practice)",
+    x = "Year",
+    y = "Monthly ($)",
+    color = "Legend"
+  ) +
+  theme_minimal()prac
+
+
